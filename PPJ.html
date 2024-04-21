@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday</title>
+<style>
+  body {
+    position: relative;
+    height: 100vh;
+    margin: 0;
+    background-image: url('confetti-gif-800.gif');
+    background-size: cover; /* Cover the entire background */
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.7); /* Darken the background */
+  }
+  
+  #birthday-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 3em;
+    font-family: sans-serif;
+    color: #050505;
+    opacity: 0.5;
+  }
+</style>
+</head>
+<body>
+<div id="birthday-message"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const names = ["Priyal ji", "PPJ 💕"];
+    let currentIndex = 0;
+    const messageElement = document.getElementById("birthday-message");
+
+    // Function to update birthday message with alternating names
+    setInterval(function() {
+      messageElement.textContent = `Happy Birthday ${names[currentIndex]}`;
+      currentIndex = (currentIndex + 1) % names.length;
+    }, 2000);
+  });
+</script>
+</body>
+</html>
